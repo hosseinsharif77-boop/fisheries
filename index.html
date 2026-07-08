@@ -65,7 +65,7 @@
   @keyframes shine { 0% { left: -150%; } 20% { left: 150%; } 100% { left: 150%; } }
   @keyframes floatBtn { 0%, 100% { transform: translate(0, 0) scale(1); } 25% { transform: translate(2px, -3px) scale(1.02); } 50% { transform: translate(-2px, 2px) scale(0.98); } 75% { transform: translate(3px, -1px) scale(1.01); } }
 
-  /* ─── SECTIONS (Semi-Transparent to show 3D Background) ─── */
+  /* ─── SECTIONS ─── */
   section { position: relative; z-index: 1; }
   #story { background: linear-gradient(180deg, rgba(2,8,15,0.8) 0%, rgba(13,27,42,0.8) 100%); }
   #how-to { background: linear-gradient(180deg, rgba(13,27,42,0.8) 0%, rgba(27,73,101,0.8) 100%); }
@@ -80,11 +80,11 @@
   .section-inner { max-width: 1200px; margin: 0 auto; padding: 80px 16px; position: relative; z-index: 2; }
   .section-label { font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--aqua); margin-bottom: 10px; }
   .section-title { font-size: clamp(1.8rem, 5vw, 2.8rem); font-weight: 600; color: var(--white); line-height: 1.1; margin-bottom: 28px; text-transform: uppercase; }
-  .gold-divider { width: 150px; height: 2px; background: var(--aqua); margin: 0 auto 16px; }
+  .gold-divider { width: 50px; height: 2px; background: var(--aqua); margin: 0 auto 16px; }
 
   /* ─── WAVE DIVIDERS ─── */
-  .wave-divider { position: absolute; bottom: -1px; left: 0; width: 100%; height: 100px; z-index: 1; pointer-events: none; }
-  .wave-divider svg { width: 100%; height: 230%; display: block; }
+  .wave-divider { position: absolute; bottom: -1px; left: 0; width: 100%; height: 80px; z-index: 1; pointer-events: none; }
+  .wave-divider svg { width: 100%; height: 100%; display: block; }
 
   /* ─── HOW TO ORDER ─── */
   .steps-container { position: relative; margin-top: 60px; padding: 0 20px; }
@@ -97,7 +97,7 @@
   .step-title { font-size: 1.1rem; color: var(--white); margin-bottom: 8px; font-weight: 500; font-family: 'Oswald', sans-serif; }
   .step-desc { font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; max-width: 250px; margin: 0 auto; }
 
-  /* ─── STORY (Custom Vertical Layout) ─── */
+  /* ─── STORY ─── */
   .story-vertical-layout { display: flex; flex-direction: column; align-items: center; gap: 24px; max-width: 800px; }
   .story-text-box { width: 100%; text-align: center; }
   .story-text-box h2 { margin-top: 10px; }
@@ -107,36 +107,21 @@
   .story-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
   .story-text .highlight { color: var(--white); font-size: 1.1rem; font-style: italic; font-weight: 500; border-left: 2px solid var(--aqua); padding-left: 16px; margin: 20px 0; text-align: left; }
   
-  /* Small Marquee (Seamless Infinite Loop & Water Split) */
-  .small-marquee { 
-    width: 100%; border-top: 1px solid rgba(98,182,203,0.1); border-bottom: 1px solid rgba(98,182,203,0.1); 
-    padding: 12px 0; overflow: hidden; display: block; position: relative; height: 50px; 
-  }
-  .small-marquee .marquee-track { 
-    display: flex; align-items: center; height: 100%; width: max-content; 
-    animation: scroll-marquee 25s linear infinite; z-index: 2; position: relative;
-  }
-  .small-marquee .marquee-item { 
-    font-family: 'Oswald', sans-serif; font-size: 1.5rem; font-weight: 600; color: var(--aqua); 
-    text-transform: uppercase; padding: 0 40px; text-shadow: 0 0 5px rgba(98,182,203,0.3); white-space: nowrap;
-  }
-  /* Water Light Sweep Behind Text */
-  .small-marquee::before {
-    content: ''; position: absolute; top: 0; left: -50%; width: 50%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(98, 182, 203, 0.4), transparent);
-    transform: skewX(-20deg); animation: water-sweep 4s infinite; pointer-events: none; z-index: 1;
-  }
+  .small-marquee { width: 100%; border-top: 1px solid rgba(98,182,203,0.1); border-bottom: 1px solid rgba(98,182,203,0.1); padding: 12px 0; overflow: hidden; display: block; position: relative; height: 50px; }
+  .small-marquee .marquee-track { display: flex; align-items: center; height: 100%; width: max-content; animation: scroll-marquee 25s linear infinite; z-index: 2; position: relative; }
+  .small-marquee .marquee-item { font-family: 'Oswald', sans-serif; font-size: 1.5rem; font-weight: 600; color: var(--aqua); text-transform: uppercase; padding: 0 40px; text-shadow: 0 0 5px rgba(98,182,203,0.3); white-space: nowrap; }
+  .small-marquee::before { content: ''; position: absolute; top: 0; left: -50%; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, rgba(98, 182, 203, 0.4), transparent); transform: skewX(-20deg); animation: water-sweep 4s infinite; pointer-events: none; z-index: 1; }
   @keyframes scroll-marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
   @keyframes water-sweep { 0% { left: -50%; } 100% { left: 150%; } }
 
-  /* ─── STORY 2 (Original Grid Layout) ─── */
+  /* ─── STORY 2 ─── */
   .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; text-align: left; }
   .story-grid .story-text h2 { text-align: left; }
   .story-grid .story-text .gold-divider { margin: 0 0 16px 0; }
   .story-grid .story-img-wrap { height: 100%; max-height: 400px; min-height: 300px; }
 
   /* ─── MENU & CART ─── */
-  .menu-tabs-container { position: sticky; top: 54px; z-index: 90; background: rgba(2,8,15,0.98); backdrop-filter: blur(10px); padding: 15px 0; margin-bottom: 5px; border-bottom: 1px solid rgba(98,182,203,0.2); box-shadow: 0 4px 20px rgba(0,0,0,0.3);margin-right: -5px;margin-left: -5px; }
+  .menu-tabs-container { position: sticky; top: 54px; z-index: 90; background: rgba(2,8,15,0.98); backdrop-filter: blur(10px); padding: 15px 0; margin-bottom: 32px; border-bottom: 1px solid rgba(98,182,203,0.2); box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
   .menu-tabs { display: flex; overflow-x: auto; white-space: nowrap; justify-content: flex-start; gap: 8px; padding: 0 16px; -webkit-overflow-scrolling: touch; scrollbar-width: none; max-width: 1200px; margin: 0 auto; }
   .menu-tabs::-webkit-scrollbar { display: none; }
   .tab-btn { background: rgba(190,233,232,0.05); border: 1px solid rgba(190,233,232,0.1); color: var(--text-muted); font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 10px 20px; cursor: pointer; transition: all 0.25s; border-radius: 4px; font-family: 'Oswald', sans-serif; text-align: center; flex-shrink: 0; }
@@ -161,19 +146,43 @@
   .menu-qty-num { color: var(--white); font-size: 0.9rem; min-width: 12px; text-align: center; font-family: 'Oswald', sans-serif; }
 
   /* ─── SPECIALS, TESTIMONIALS ─── */
-  .specials-grid, .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; text-align: left; }
-  .special-card, .testimonial-card { background: rgba(190,233,232,0.05); border: 1px solid rgba(98,182,203,0.2); border-radius: 4px; padding: 24px; position: relative; overflow: hidden; transition: all 0.3s; }
-  .special-card:hover, .testimonial-card:hover { border-color: var(--aqua); background: rgba(98,182,203,0.08); transform: translateY(-3px); }
+  .specials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; text-align: left; }
+  .special-card { background: rgba(190,233,232,0.05); border: 1px solid rgba(98,182,203,0.2); border-radius: 4px; padding: 24px; position: relative; overflow: hidden; transition: all 0.3s; }
+  .special-card:hover { border-color: var(--aqua); background: rgba(98,182,203,0.08); transform: translateY(-3px); }
   .special-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--aqua); }
   .special-day { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--aqua); margin-bottom: 8px; font-weight: 600; }
   .special-title { font-size: 1.5rem; color: var(--white); margin-bottom: 10px; font-weight: 500; }
   .special-desc { font-size: 0.85rem; color: var(--seafoam); line-height: 1.6; margin-bottom: 16px; }
   .special-price { font-size: 1.4rem; color: var(--aqua); font-weight: 700; font-family: 'Oswald', sans-serif; }
   .special-price span { font-size: 0.8rem; color: var(--text-muted); text-decoration: line-through; margin-left: 8px; font-weight: 400;}
-  .testimonial-stars { color: #E8C44A; margin-bottom: 12px; font-size: 1.1rem; }
-  .testimonial-text { font-size: 0.9rem; color: var(--seafoam); line-height: 1.7; margin-bottom: 16px; font-style: italic; }
-  .testimonial-author { font-family: 'Oswald', sans-serif; color: var(--white); font-size: 1rem; }
-  .author-role { font-size: 0.75rem; color: var(--text-muted); }
+
+  /* Google Reviews Layout */
+  .rating-summary { display: flex; flex-direction: column; align-items: center; gap: 5px; margin-bottom: 40px; }
+  .rating-score { font-size: 3rem; font-weight: 700; color: var(--white); font-family: 'Oswald', sans-serif; line-height: 1; }
+  .rating-stars { color: #E8C44A; font-size: 1.5rem; letter-spacing: 2px; }
+  .rating-count { font-size: 0.8rem; color: var(--text-muted); margin-top: 5px; }
+  
+  .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; text-align: left; }
+  .google-review { display: flex; flex-direction: column; gap: 12px; background: rgba(190,233,232,0.05); border: 1px solid rgba(98,182,203,0.2); border-radius: 4px; padding: 24px; transition: all 0.3s; }
+  .google-review:hover { border-color: var(--aqua); background: rgba(98,182,203,0.08); transform: translateY(-3px); }
+  .review-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(190,233,232,0.1); padding-bottom: 10px; }
+  .reviewer-name { font-weight: 600; color: var(--white); font-size: 1.1rem; font-family: 'Oswald', sans-serif; }
+  .review-stars { color: #E8C44A; font-size: 1rem; }
+  .review-date { font-size: 0.75rem; color: var(--text-muted); margin-top: auto; }
+  .owner-reply { background: rgba(2,8,15,0.4); border-left: 2px solid var(--aqua); padding: 12px; border-radius: 4px; font-size: 0.85rem; color: var(--seafoam); margin-top: 10px; }
+  .owner-reply strong { color: var(--aqua); display: block; margin-bottom: 4px; font-family: 'Oswald', sans-serif; }
+  
+  /* Hidden Review & Load More Logic (No JS inline style conflict) */
+  .hidden-review { display: none; }
+  .reveal-animation { animation: fadeInUp 0.6s ease forwards; }
+  @keyframes fadeInUp { 
+    0% { opacity: 0; transform: translateY(30px); } 
+    100% { opacity: 1; transform: translateY(0); } 
+  }
+  
+  .toggle-reviews-btn { background: transparent !important; border: 1px solid var(--aqua) !important; color: var(--aqua) !important; max-width: 300px; margin: 40px auto 0 !important; animation: none !important; }
+  .toggle-reviews-btn:hover { background: var(--aqua) !important; color: var(--ocean-deep) !important; box-shadow: 0 8px 25px rgba(98,182,203,0.4); }
+  .toggle-reviews-btn::after { display: none !important; }
 
   /* ─── GALLERY 3D CAROUSEL ─── */
   .gallery-carousel { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 2rem; padding: 4rem 0; scrollbar-width: none; -webkit-overflow-scrolling: touch; perspective: 1000px; width: 100%; max-width: 100%; cursor: grab; }
@@ -283,7 +292,7 @@
     .story-text { text-align: center; }
     .story-text h2, .story-text .gold-divider { text-align: center; margin: 0 auto 16px; }
     .location-grid { grid-template-columns: 1fr; }
-    .menu-tabs-container { top: 52px; }
+    .menu-tabs-container { top: 48px; }
     .footer-inner { grid-template-columns: 1fr; gap: 30px; text-align: center; }
     .footer-brand { align-items: center; }
     .footer-col ul { align-items: center; }
@@ -292,7 +301,7 @@
 
   @media (max-width: 600px) {
     body { padding-bottom: 90px; }
-    .section-inner { padding: 50px 5px; }
+    .section-inner { padding: 50px 16px; }
     .section-title { font-size: 1.8rem; margin-bottom: 20px; }
     .hero-logo-img { width: 70px; height: 70px; }
     #hero { min-height: 550px; padding-top: 60px; }
@@ -311,8 +320,8 @@
     
     .steps-container { padding: 0; }
     .steps-grid { grid-template-columns: 1fr; gap: 30px; }
-    .steps-line { top: 25px; bottom: 25px; left: 35px; right: auto; width: 2px; height: auto; }
-    .step-card { display: flex; align-items: center; text-align: left;  gap: 35px; }
+    .steps-line { top: 25px; bottom: 25px; left: 25px; right: auto; width: 2px; height: auto; }
+    .step-card { display: flex; align-items: center; text-align: left; padding-left: 20px; gap: 15px; }
     .step-dot { margin: 0; flex-shrink: 0; width: 50px; height: 50px; }
     .step-text { flex: 1; }
     .step-title { margin-bottom: 4px; }
@@ -348,7 +357,6 @@
   <div class="hero-actions">
     <a href="#menu" class="btn-primary">Discover Our Menu</a>
   </div>
-  <!-- Applied fill-opacity to let 3D background show through -->
   <div class="wave-divider">
     <svg viewBox="0 0 1200 100" preserveAspectRatio="none"><path d="M0,50 C150,100 350,0 600,50 C850,100 1050,0 1200,50 L1200,100 L0,100 Z" fill="#02080f" fill-opacity="0.8"></path></svg>
   </div>
@@ -494,16 +502,129 @@
   </div>
 </section>
 
+<!-- Testimonials Section with Real Google Reviews -->
 <section id="testimonials">
   <div class="section-inner">
-    <p class="section-label">Social Proof</p>
+    <p class="section-label">Google Reviews</p>
     <h2 class="section-title">What Our Customers Say</h2>
     <div class="gold-divider"></div>
-    <div class="testimonials-grid">
-      <div class="testimonial-card"><div class="testimonial-stars">★★★★★</div><div class="testimonial-text">"Absolutely the best fish and chips I've had in Yorkshire! The beef dripping makes such a difference. The new online ordering is so quick too."</div><div class="testimonial-author">Sarah J.</div><div class="author-role">Local Guide</div></div>
-      <div class="testimonial-card"><div class="testimonial-stars">★★★★★</div><div class="testimonial-text">"As a student, the 2-5 PM deals are a lifesaver. The fish bites are incredible and affordable. Way better than any fast food chain."</div><div class="testimonial-author">Tom K.</div><div class="author-role">Uni Student</div></div>
-      <div class="testimonial-card"><div class="testimonial-stars">★★★★★</div><div class="testimonial-text">"Reminds me of the chippies I went to as a kid. Proper traditional chips, generous portions, and friendly staff. Highly recommend the Special!"</div><div class="testimonial-author">David M.</div><div class="author-role">Verified Customer</div></div>
+    
+    <div class="rating-summary">
+      <span class="rating-score">4.3</span>
+      <span class="rating-stars">★★★★☆</span>
+      <span class="rating-count">Based on 156 Google Reviews</span>
     </div>
+    
+    <div class="testimonials-grid" id="reviews-grid">
+      <!-- Initial Visible Reviews -->
+      <div class="google-review">
+        <div class="review-header">
+          <div class="reviewer-name">Noor Jalil</div>
+          <div class="review-stars">★★★★★</div>
+        </div>
+        <div class="testimonial-text">"Absolutely my new favourite fish and chip shop! The beef dripping fried fish was outstanding perfectly crispy, full of flavour, and surprisingly light, without that heavy, greasy feeling you sometimes get elsewhere. The battered sausage was incredible too, and you can really tell everything is cooked fresh to order."</div>
+        <div class="review-date">a month ago</div>
+        <div class="owner-reply">
+          <strong>Market Fisheries (Owner):</strong>
+          Thank you so much for your kind review! We’re really glad you enjoyed your visit and we look forward to welcoming you back soon!
+        </div>
+      </div>
+
+      <div class="google-review">
+        <div class="review-header">
+          <div class="reviewer-name">Malaak Daneshyar</div>
+          <div class="review-stars">★★★★★</div>
+        </div>
+        <div class="testimonial-text">"Tried both the fish and chips and the sausage and chips. Both tasted great! Fish had the perfect amount of batter on it and the chips were fresh. 😋 Place was very clean and didn’t have a strong smell like other chippies!"</div>
+        <div class="review-date">a month ago</div>
+        <div class="owner-reply">
+          <strong>Market Fisheries (Owner):</strong>
+          Thank you for your lovely review. Happy to hear you enjoyed the food and appreciate the cleanliness of the shop too - thanks to our wonderful staff! 😊
+        </div>
+      </div>
+
+      <div class="google-review">
+        <div class="review-header">
+          <div class="reviewer-name">Sara Hafidh</div>
+          <div class="review-stars">★★★★★</div>
+        </div>
+        <div class="testimonial-text">"Fantastic fresh food, made while we were there ! amazing service, polite and friendly staff. I have finally found my favourite fish and chip shop, I will be coming back as a regular. The batter is crispy, flaky and light."</div>
+        <div class="review-date">a month ago</div>
+      </div>
+
+      <!-- Hidden Reviews (Loaded 3 at a time) -->
+      <div class="google-review hidden-review">
+        <div class="review-header">
+          <div class="reviewer-name">Devon Makepeace</div>
+          <div class="review-stars">★☆☆☆☆</div>
+        </div>
+        <div class="testimonial-text">"It was alot better with previous owners that used 100% beef dripping which made the food very tasty and not greasy at all now been taken over they don't use that no more now it says vegetable oil but they use lard which makes things really greasy to point it was all over the plate wasn't nice at all"</div>
+        <div class="review-date">a month ago</div>
+        <div class="owner-reply">
+          <strong>Market Fisheries (Owner):</strong>
+          Thank you for your review, however you have some facts mistaken. This shop still uses 100% beef dripping. We do not use vegetable oil or lard, nor is it stated anywhere that we do, so we’re unsure where this has come from. You can always check with staff in the shop if in doubt.
+        </div>
+      </div>
+
+      <div class="google-review hidden-review">
+        <div class="review-header">
+          <div class="reviewer-name">David Wood</div>
+          <div class="review-stars">★★★★★</div>
+        </div>
+        <div class="testimonial-text">"Can't understand most of bad reviews. Been coming here since he opened. Best fish shop for miles. Just had fish and chips sausage and 2 fantastic large fish cakes. Service is slow but the reason being mostly everything freshly made as you walk in. You have got to wait for quality."</div>
+        <div class="review-date">2 years ago</div>
+      </div>
+
+      <div class="google-review hidden-review">
+        <div class="review-header">
+          <div class="reviewer-name">Ryan Austin</div>
+          <div class="review-stars">★☆☆☆☆</div>
+        </div>
+        <div class="testimonial-text">"Service was terrible; don’t know if was just us because we was 2 young lads as service seemed ok for everyone else but the guy serving us was blunt & rude. I also saw a member of staff eat chips from the fryer & didn’t wash his hands when serving the next customer."</div>
+        <div class="review-date">2 years ago</div>
+      </div>
+      
+      <div class="google-review hidden-review">
+        <div class="review-header">
+          <div class="reviewer-name">Arfan Ali</div>
+          <div class="review-stars">★☆☆☆☆</div>
+        </div>
+        <div class="testimonial-text">"No parking as the area is very busy small town. The staff really nice. Unfortunately the fish was disgusting 🤢 waste of cash & time 🕰️ honestly waited two weeks then when I arrived was shocked stay away"</div>
+        <div class="review-date">3 years ago</div>
+        <div class="owner-reply">
+          <strong>Market Fisheries (Owner):</strong>
+          Dear Arfan, sorry to hear that you didn't enjoy the fish. We work hard to ensure that our products are of highest quality. If your delivery took a long time you can complain with our delivery partners. And if you ordered in the shop you could have raised your concerns and we would be happy to change or refund you.
+        </div>
+      </div>
+
+      <div class="google-review hidden-review">
+        <div class="review-header">
+          <div class="reviewer-name">Mikey</div>
+          <div class="review-stars">★★☆☆☆</div>
+        </div>
+        <div class="testimonial-text">"Went in for a bag of chips, got home and felt robbed. There was about 25 chips in there, not kidding. The women behind the till needs some customer service training, couldn't even smile."</div>
+        <div class="review-date">3 weeks ago</div>
+        <div class="owner-reply">
+          <strong>Market Fisheries (Owner):</strong>
+          Our chips are freshly prepared on site from raw potatoes, unlike pre-processed products, so they aren’t all evenly sized. Portions are weighed to ensure consistency and fairness for every customer. While it may sometimes appear smaller or look like fewer chips if the pieces are larger, the overall portion is based on weight. We’re also sorry to hear that you felt the service was lacking, as we always aim to provide a friendly and welcoming experience.
+        </div>
+      </div>
+
+      <div class="google-review hidden-review">
+        <div class="review-header">
+          <div class="reviewer-name">steven hudson</div>
+          <div class="review-stars">★★★★★</div>
+        </div>
+        <div class="testimonial-text">"1 of the best fish+chips around here"</div>
+        <div class="review-date">2 weeks ago</div>
+        <div class="owner-reply">
+          <strong>Market Fisheries (Owner):</strong>
+          Thank you for the great review! We’re really happy you rate us as one of the best around - it means a lot to the whole team. We appreciate your support and hope to see you again soon!
+        </div>
+      </div>
+    </div>
+    
+    <button class="btn-primary toggle-reviews-btn" id="toggle-reviews-btn" onclick="loadMoreReviews()">Load More Reviews</button>
   </div>
   <div class="wave-divider">
     <svg viewBox="0 0 1200 100" preserveAspectRatio="none"><path d="M0,20 C400,80 800,0 1200,40 L1200,100 L0,100 Z" fill="#0D1B2A" fill-opacity="0.8"></path></svg>
@@ -828,6 +949,22 @@ function closeModal(e) {
   if (e.target.classList.contains('modal-overlay')) { e.target.classList.remove('open'); }
 }
 
+// Load More Reviews Logic (3 at a time)
+function loadMoreReviews() {
+  const hiddenReviews = document.querySelectorAll('.hidden-review');
+  const reviewsToShow = 3; // Number of reviews to show per click
+
+  for (let i = 0; i < Math.min(reviewsToShow, hiddenReviews.length); i++) {
+    hiddenReviews[i].classList.remove('hidden-review');
+    hiddenReviews[i].classList.add('reveal-animation');
+  }
+
+  // If no more hidden reviews, hide the button
+  if (document.querySelectorAll('.hidden-review').length === 0) {
+    document.getElementById('toggle-reviews-btn').style.display = 'none';
+  }
+}
+
 renderMenu();
 
 const hamburger = document.getElementById('hamburger');
@@ -844,7 +981,6 @@ window.addEventListener('scroll', () => {
   progressBar.style.width = scrollPercent + '%';
 });
 
-// Menu Visibility for Cart FAB
 const menuSection = document.getElementById('menu');
 const menuObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -854,7 +990,6 @@ const menuObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 menuObserver.observe(menuSection);
 
-// Footer Visibility for Back to Top Button
 const footerSection = document.getElementById('footer');
 const backToTopBtn = document.getElementById('back-to-top');
 const footerObserver = new IntersectionObserver((entries) => {
@@ -879,13 +1014,13 @@ function switchTab(event, name) {
   container.scrollTo({ left: scrollLeft, behavior: 'smooth' });
 }
 
-// Scroll Reveal Configs
+// ScrollReveal applied ONLY to non-hidden items to prevent opacity bugs
 ScrollReveal().reveal('#story-text, #story2-text', { origin: 'left', distance: '100px', duration: 1000, easing: 'ease-out', reset: true });
 ScrollReveal().reveal('#story-img, #story2-img', { origin: 'right', distance: '100px', duration: 1000, easing: 'ease-out', reset: true });
-ScrollReveal().reveal('.special-card, .testimonial-card', { origin: 'bottom', distance: '50px', duration: 800, interval: 100, reset: true });
+ScrollReveal().reveal('.special-card', { origin: 'bottom', distance: '50px', duration: 800, interval: 100, reset: true });
 ScrollReveal().reveal('.social-link', { origin: 'bottom', distance: '50px', duration: 800, interval: 150, reset: true });
+ScrollReveal().reveal('.google-review:not(.hidden-review)', { origin: 'bottom', distance: '50px', duration: 800, interval: 100, reset: true });
 
-// How to Order Continuous Animation
 const stepObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -897,12 +1032,10 @@ const stepObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 document.querySelectorAll('.step-card').forEach(card => stepObserver.observe(card));
 
-// Gallery Carousel Logic & Auto-scroll (Synced with Manual Scroll)
 const carousel = document.getElementById('gallery-carousel');
 const carouselItems = carousel.querySelectorAll('.carousel-item');
 const dotsContainer = document.getElementById('carousel-dots');
 
-// Create Dots
 carouselItems.forEach((_, i) => {
   const dot = document.createElement('div');
   dot.classList.add('carousel-dot');
@@ -949,7 +1082,6 @@ function updateCarousel() {
     }
   });
 
-  // Sync currentIndex with manual scroll so auto-scroll continues from user's position
   currentIndex = closestIndex;
 }
 
@@ -981,7 +1113,6 @@ carousel.addEventListener('scroll', () => {
 updateCarousel();
 startAutoScroll();
 
-// ── THREE.JS UNDERWATER SCENE (Brightened Colors) ──
 (function() {
   const canvas = document.getElementById('hero-canvas');
   const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
